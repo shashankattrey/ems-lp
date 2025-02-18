@@ -44,7 +44,7 @@ export default function NeedHelp() {
           </div>
           <div>
             <label className="block text-gray-700">Message</label>
-            <textarea className="w-full p-2 border rounded-lg" rows="4" placeholder="Type your message" required></textarea>
+            <textarea className="w-full p-2 border rounded-lg" rows={4} placeholder="Type your message" required></textarea>
           </div>
           <button type="submit" className="w-full bg-[#6901b1] text-white p-2 rounded-lg h-12">Submit</button>
         </form>
