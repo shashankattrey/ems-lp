@@ -36,32 +36,65 @@ export default function Home() {
           "Content-Type": "application/json",
         },
         mode: "cors",
-
-
         body: JSON.stringify({
-          email,
+          email: "shashaednk@example.com", // example email
         }),
       });
 
-      const data = await response.json();
+      // Log the raw response text
+      const rawResponse = await response.text();
+      console.log("Raw response from server:", rawResponse);
 
-      if (response.ok) {
-        setEmail(""); // Clear input field
-        toast.success("✅ Email submitted successfully!", {
-          position: "top-center",
-          autoClose: 3000,
-          hideProgressBar: true,
-          className: "custom-toast",
-        });
+      // Check if the response is valid JSON before parsing
+      let data;
+      if (rawResponse && rawResponse.trim() !== "") {
+        try {
+          data = JSON.parse(rawResponse);
+          console.log("Parsed data:", data);
+
+          // Now parse the 'body' field again since it's a stringified JSON
+          let body;
+          if (data.body) {
+            try {
+              body = JSON.parse(data.body);
+              console.log("Parsed body:", body);
+            } catch (error) {
+              console.error("Error parsing the nested body:", error);
+            }
+          }
+
+          // Check if the response is successful
+          if (response.ok) {
+            toast.success("✅ Email submitted successfully!", {
+              position: "top-center",
+              autoClose: 3000,
+              hideProgressBar: true,
+              className: "custom-toast",
+            });
+          } else {
+            toast.error(`❌ ${body?.error || "Failed to submit email. Try again."}`, {
+              position: "top-center",
+              autoClose: 3000,
+              hideProgressBar: true,
+              className: "custom-toast custom-toast-error",
+            });
+          }
+
+        } catch (error) {
+          console.error("Error parsing JSON:", error);
+          toast.error("❌ Error submitting email.", {
+            position: "top-center",
+            autoClose: 3000,
+            hideProgressBar: true,
+            className: "custom-toast custom-toast-error",
+          });
+        }
       } else {
-        toast.error(`❌ ${data.error || "Failed to submit email. Try again."}`, {
-          position: "top-center",
-          autoClose: 3000,
-          hideProgressBar: true,
-          className: "custom-toast custom-toast-error",
-        });
+        console.error("Invalid or empty response body:", rawResponse);
+        throw new Error("Received empty or invalid response from server.");
       }
     } catch (error) {
+      console.error("Error submitting email:", error);
       toast.error("❌ Error submitting email.", {
         position: "top-center",
         autoClose: 3000,
@@ -72,6 +105,7 @@ export default function Home() {
       setLoading(false); // Reset loading state after submission
     }
   };
+
 
 
 
@@ -362,7 +396,7 @@ export default function Home() {
       />
 
 
-      <Footer />
+
 
 
 
