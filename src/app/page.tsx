@@ -214,6 +214,11 @@ export default function Home() {
           Choose Studio <br className="sm:hidden" />
           as per Category
         </h2>
+        <div className="flex justify-center  w-auto ">
+          <img src="https://res.cloudinary.com/dcsalwhgc/image/upload/v1738441721/jpr2zjejiycwliwlevmw.png" alt="Studio Banner" className="w-full max-w-3xl rounded-lg shadow-lg" />
+        </div>
+
+
         <div className={styles.marquee}>
           <div className={styles.marqueeText + " flex space-x-6 text-xl sm:text-lg md:text-xl font-medium"}>
             <span className="flex items-center space-x-2">
