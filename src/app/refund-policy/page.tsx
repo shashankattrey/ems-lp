@@ -67,7 +67,7 @@ const RefundPolicy = () => {
         </p>
         <ul className="list-decimal list-inside text-gray-700">
           <li>
-            <strong>Initiate a Refund Request:</strong> Contact our support team at <a href="mailto:support@easemyshoot.com" className="text-blue-500 hover:underline">support@easemyshoot.com</a> within 24 hours of the issue, providing relevant details such as booking confirmation, issue description, and supporting evidence (e.g., photos, screenshots).
+            <strong>Initiate a Refund Request:</strong> Contact our support team at <a href="mailto:help.easemyshoot@gmail.com" className="text-blue-500 hover:underline">help.easemyshoot@gmail.com</a> within 24 hours of the issue, providing relevant details such as booking confirmation, issue description, and supporting evidence (e.g., photos, screenshots).
           </li>
           <li>
             <strong>Review Period:</strong> Our team will assess your request and respond within 5-7 business days to confirm eligibility.
@@ -123,7 +123,7 @@ const RefundPolicy = () => {
         </p>
         <ul className="list-disc list-inside text-gray-700">
           <li>
-            <strong>Email:</strong> <a href="mailto:support@easemyshoot.com" className="text-blue-500 hover:underline">support@easemyshoot.com</a>
+            <strong>Email:</strong> <a href="mailto:help.easemyshoot@gmail.com" className="text-blue-500 hover:underline">help.easemyshoot@gmail.com</a>
           </li>
 
           {/* <li>

@@ -1,6 +1,6 @@
 /* Main container */
 .container {
-  width: 100vw;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -122,7 +122,7 @@
 .useCaseText {
   text-align: center;
   margin-top: 50px;
-  background: #fff;
+  background: #ffffff00;
 }
 
 .useCaseText h2 {
@@ -133,11 +133,8 @@
 
 /* Marquee Section */
 .marquee {
-  width: 100vw;
+  max-width: 100%;
   overflow: hidden;
-  white-space: nowrap;
-  display: flex;
-  justify-content: center;
 }
 
 .marqueeText {
@@ -366,11 +363,8 @@
   }
 
   .imageCard {
-    width: 100vw;
+    max-width: 100%;
     overflow: hidden;
-    white-space: nowrap;
-    display: flex;
-    justify-content: center;
   }
 }
 

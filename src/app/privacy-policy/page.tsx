@@ -185,7 +185,7 @@ const PrivacyPolicy = () => {
         </p>
         <ul className="list-disc list-inside text-gray-700">
           <li>
-            <strong>Email:</strong> <a href="mailto:support@easemyshoot.com" className="text-blue-500 hover:underline">support@easemyshoot.com</a>
+            <strong>Email:</strong> <a href="mailto:help.easemyshoot@gmail.com" className="text-blue-500 hover:underline">help.easemyshoot@gmail.com</a>
           </li>
           {/* <li>
             <strong>Phone:</strong> +91-XXXXXXXXXX

@@ -9,6 +9,7 @@ import Header from './components/Header';
 import 'react-toastify/dist/ReactToastify.css'; // Import default styles
 import { toast, ToastContainer } from 'react-toastify';
 
+
 const images = [
   "/1.jpeg",
   "/2.jpeg",
@@ -111,10 +112,7 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
-      {/* White Header */}
-      {/* <header className={styles.whiteHeader}>
-        <img src="/logo_ems.png" alt="Logo" className={styles.logo} />
-      </header> */}
+
       <Header />
 
       {/* Hero Grid Section */}
@@ -219,26 +217,26 @@ export default function Home() {
         </div>
 
 
-        <div className={styles.marquee}>
-          <div className={styles.marqueeText + " flex space-x-6 text-xl sm:text-lg md:text-xl font-medium"}>
-            <span className="flex items-center space-x-2">
-              <span className="text-base sm:text-xl">🎬</span>
-              <span>Dance Videos</span>
-            </span>
-            <span className="flex items-center space-x-2">
-              <span className="text-base sm:text-xl">📸</span>
-              <span>Photo Shoot</span>
-            </span>
-            <span className="flex items-center space-x-2">
-              <span className="text-base sm:text-xl">🎥</span>
-              <span>Video Shoot</span>
-            </span>
-            <span className="flex items-center space-x-2">
-              <span className="text-base sm:text-xl">🎙️</span>
-              <span>Podcast</span>
-            </span>
-          </div>
+        <div className="relative w-full overflow-hidden mt-10">
+          <motion.div
+            className="flex space-x-6 text-xl sm:text-lg md:text-xl font-medium w-fit"
+            animate={{ x: ["0%", "-100%"] }}
+            transition={{ ease: "linear", duration: 10, repeat: Infinity }}
+          >
+            {[
+              { emoji: "🎬", text: "Dance Videos" },
+              { emoji: "📸", text: "Photo Shoot" },
+              { emoji: "🎥", text: "Video Shoot" },
+              { emoji: "🎙️", text: "Podcast" },
+            ].map((item, index) => (
+              <span key={index} className="flex items-center space-x-2">
+                <span className="text-base sm:text-lg">{item.emoji}</span>
+                <span className='text-base line-clamp-1'>{item.text}</span>
+              </span>
+            ))}
+          </motion.div>
         </div>
+
 
       </div>
       {/* <hr className="w-full mx-auto  border border-gray-200 border-dotted" /> */}
@@ -268,7 +266,7 @@ export default function Home() {
               {item.icon && <span className="text-xl">{item.icon}</span>}
             </div>
 
-            {/* Dotted Line - Only for Mobile & Not Last Item */}
+
             {index !== arr.length - 1 && (
               <div className="absolute left-1/2 bottom-0 h-2 w-[80%] border-l-2 border-dotted border-gray-400 sm:hidden transform -translate-x-1/2"></div>
             )}
@@ -278,28 +276,34 @@ export default function Home() {
 
 
       {/* Pick from Top Properties Section */}
-      <div className={styles.pickPropertiesText}>
-
+      {/* <div className={styles.pickPropertiesText}>
         <div className="mt-20">
           <h2 className="text-4xl sm:text-3xl md:text-5xl font-bold text-center leading-tight sm:whitespace-nowrap bg-gradient-to-b from-[#6901b1] to-[#8e5eb3] bg-clip-text text-transparent">
             Pick from Top Studios
           </h2>
-          <div className="relative w-full overflow-hidden mt-6">
+          <div className="relative w-full overflow-hidden">
             <motion.div
-              className="flex space-x-6 w-max"
-              animate={{ x: ["0%", "-100%"] }}
+              className="flex space-x-6 w-fit"
+              animate={{ x: ["0%", "-50%"] }}
               transition={{ ease: "linear", duration: 15, repeat: Infinity }}
             >
               {[...images, ...images].map((src, index) => (
-                <div key={index} className="w-[150px] sm:w-[200px] md:w-[250px] h-40 flex-shrink-0">
-                  <img src={src} alt={`Property ${index + 1}`} className="w-full h-full object-cover rounded-lg" />
+                <div
+                  key={index}
+                  className="w-[150px] sm:w-[200px] md:w-[250px] h-40 flex-shrink-0"
+                >
+                  <img
+                    src={src}
+                    alt={`Property ${index + 1}`}
+                    className="w-full h-full object-cover rounded-lg"
+                  />
                 </div>
               ))}
             </motion.div>
           </div>
-
         </div>
-      </div>
+      </div> */}
+
 
 
       {/* Left Image and Right Text Section */}
